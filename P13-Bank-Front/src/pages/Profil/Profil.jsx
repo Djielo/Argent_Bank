@@ -1,7 +1,7 @@
 import UserAccountItem from "../../components/UserAccountItem/UserAccountItem";
 import { UserAccountItemArray } from "../../datas/UserAccountItemArray";
 
-const User = () => {
+const Profil = () => {
   return (
     <main className="main main-user bg-dark">
       <div className="header">
@@ -20,4 +20,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Profil;
