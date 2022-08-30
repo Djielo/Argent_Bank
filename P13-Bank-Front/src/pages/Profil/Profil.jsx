@@ -1,14 +1,16 @@
 import UserAccountItem from "../../components/UserAccountItem/UserAccountItem";
 import { UserAccountItemArray } from "../../datas/UserAccountItemArray";
 
-const Profil = () => {
+const Profil = ({userData}) => {
+  const firstName = userData?.firstName;
+  const lastName = userData?.lastName;
   return (
     <main className="main main-user bg-dark">
       <div className="header">
         <h1>
           Welcome back
           <br />
-          Tony Stark !
+          {firstName +" "+ lastName}!
         </h1>
         <button className="edit-button">Edit Name</button>
       </div>

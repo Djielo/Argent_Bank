@@ -1,8 +1,20 @@
-const SignIn = () => {
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../services/auth.service";
+
+const SignIn = ({setUserData}) => {
+  const navigate = useNavigate();
+  const emailError = useRef();
+  const passwordError = useRef();
+  const emailInput = useRef();
+  const passwordInput = useRef();
+
   const submitForm = (e) => {
     e.preventDefault();
-    // appeler le service ici
-  }
+
+    login(emailInput, passwordInput, navigate, emailError, passwordError, setUserData);
+    
+  };
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
@@ -11,11 +23,13 @@ const SignIn = () => {
         <form onSubmit={submitForm}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input ref={ emailInput } type="text" className="username" />
+            <div ref={emailError} style={{ color: "red" }}></div>
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input ref={ passwordInput } type="password" className="password" />
+            <div ref={passwordError} style={{ color: "red" }}></div>
           </div>
           <div className="input-remember">
             <input type="checkbox" id="remember-me" />
