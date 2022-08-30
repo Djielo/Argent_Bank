@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+---
+name: '#1 Landing Page'
+about: Issue for the landing page requirement
+title: User can see the home page
+labels: ''
+assignees: ''
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A user should be able to:
 
-## Available Scripts
+- [X] Navigate to the home page (`/`)
+- [X] See all placeholder data from mockup
 
-In the project directory, you can run:
+---
+name: '#2 Login Requirement'
+about: Issue for the login requirement
+title: User can login to the system
+labels: ''
+assignees: ''
+---
 
-### `npm start`
+A user should be able to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [X] Navigate to the login page (`/login`)
+- [X] Fill out credentials
+- [X] Login to the back-end API with JWT tokens for authentication
+- [X] Successfully navigate to a profile page (`/profile`)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
+name: '#3 Logout Requirement'
+about: Issue for the logout requirement
+title: User can logout to the system
+labels: ''
+assignees: ''
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A user should be able to:
 
-### `npm run build`
+- [X] See the logout button when logged in
+- [X] Click the logout button
+- [X] Be returned to the home page (`/`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+name: '#4 Privacy Requirement'
+about: Issue for the privacy requirement
+title: User can only see their own profile
+labels: ''
+assignees: ''
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After successfully logging in, a user should be able to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [X] See their profile page
+- [X] See their first name on the profile page
+- [X] See placeholder bank account information
 
-### `npm run eject`
+---
+name: '#6 Redux Requirement'
+about: Issue for the Redux requirement
+title: State management is done through Redux
+labels: ''
+assignees: ''
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The React app contains an implementation of Redux for state management that:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ] a store to manage all of the data
+- [ ] action(s) for sending information
+- [ ] reducer(s) for handling application state changes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
+name: '#5 Update Profile Feature'
+about: Issue for the profile update requirement
+title: User can update their profile
+labels: ''
+assignees: ''
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A user should be able to:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Edit their profile (first name and last name). - [ ] This data should be persisted to the database.
