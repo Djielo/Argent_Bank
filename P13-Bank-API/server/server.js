@@ -15,7 +15,12 @@ const PORT = process.env.PORT || 3001
 dbConnection()
 
 // Handle CORS issues
-app.use(cors())
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions))
 
 // Request payload middleware
 app.use(express.json())
