@@ -9,7 +9,6 @@ import axios from "axios";
 //   });
 // };
 const login = (emailInput, passwordInput, navigate, emailError, passwordError, setUserData) => {
-  console.log(emailInput.current.value);
   return axios({
     method: "POST",
     url: "http://localhost:3001/api/v1/user/login/",
