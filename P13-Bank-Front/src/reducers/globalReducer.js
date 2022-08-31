@@ -6,13 +6,6 @@ const initialState = {
   isCancelSaveName: false,
 };
 
-// ACTIONS CREATOR
-export const loginAction = () => ({type: "SIGN_IN"});
-export const logoutAction = () => ({type: "SIGN_OUT"});
-export const editNameAction = () => ({type: "EDIT_NAME"});
-export const saveNameAction = () => ({type: "SAVE_NAME"});
-export const cancelSaveNameAction = () => ({type: "CANCEL_SAVE_NAME"});
-
 // GLOBAL REDUCER
 function globalReducer(state = initialState, action) {
   switch (action.type) {
