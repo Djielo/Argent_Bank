@@ -27,8 +27,6 @@ const Profil = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // if (maCondition) navigate("/user/profile");
-
   function editIdentity() {
     return (
       <div className="edit-container">

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { tokenAction, setIdentity } from "../actions/userActions";
 
+const BASE_URL = "http://localhost:3001/api/v1/user/";
 // const register = (email, password, firstname, lastname ) => {
 //   return axios.post(`${API_URL}signup`, {
 //     email,
@@ -9,15 +10,14 @@ import { tokenAction, setIdentity } from "../actions/userActions";
 //     lastname,
 //   });
 // };
-const login = (emailInput, passwordInput, rememberMe, navigate, emailError, passwordError, dispatch) => {
-  return axios({
-    method: "POST",
-    url: "http://localhost:3001/api/v1/user/login/",
-    data: {
-      email: emailInput.current.value,
-      password: passwordInput.current.value,
-    },
-  })
+const login = async (emailInput, passwordInput, rememberMe, navigate, emailError, passwordError, dispatch) => {
+  await axios
+    .post(BASE_URL + "login/", {
+      data: {
+        email: emailInput.current.value,
+        password: passwordInput.current.value,
+      },
+    })
     .then((res) => {
       if (res.data.body.token) {
         dispatch(tokenAction(res.data.body.token));
@@ -40,7 +40,7 @@ const login = (emailInput, passwordInput, rememberMe, navigate, emailError, pass
         emailError.current.innerHTML = "";
       }
     });
-}
+};
 
 const resetStorageAndAuthorization = () => {
   localStorage.removeItem("user");
@@ -53,7 +53,7 @@ const getUserDatas = (dispatch, token) => {
   axios.defaults.headers.common["Authorization"] = "Bearer " + myToken;
 
   axios
-    .post("http://localhost:3001/api/v1/user/profile")
+    .post(BASE_URL + "profile")
     .then((userDataRes) => {
       dispatch(tokenAction(myToken));
       dispatch(
@@ -68,12 +68,11 @@ const getUserDatas = (dispatch, token) => {
 
 const saveIdentity = (firstName, lastName, dispatch) => {
   axios
-    .put("http://localhost:3001/api/v1/user/profile", {
+    .put(BASE_URL + "/profile", {
       firstName: firstName,
       lastName: lastName,
     })
     .then((userDataRes) => {
-      console.log("UserDataRes", userDataRes);
       dispatch(
         setIdentity({
           firstName: userDataRes.data.body.firstName,
@@ -82,6 +81,6 @@ const saveIdentity = (firstName, lastName, dispatch) => {
       );
     })
     .catch((err) => console.log(err));
-}
+};
 
 export { login, resetStorageAndAuthorization, saveIdentity, getUserDatas };
