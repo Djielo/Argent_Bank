@@ -65,9 +65,9 @@ assignees: ''
 
 The React app contains an implementation of Redux for state management that:
 
-- [ ] a store to manage all of the data
-- [ ] action(s) for sending information
-- [ ] reducer(s) for handling application state changes
+- [X] a store to manage all of the data
+- [X] action(s) for sending information
+- [X] reducer(s) for handling application state changes
 
 ---
 name: '#5 Update Profile Feature'
@@ -79,4 +79,5 @@ assignees: ''
 
 A user should be able to:
 
-- [ ] Edit their profile (first name and last name). - [ ] This data should be persisted to the database.
+- [X] Edit their profile (first name and last name).
+- [X] This data should be persisted to the database.
