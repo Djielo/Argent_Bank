@@ -26,6 +26,15 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  h1 {
+    margin: 1rem 0;
+  }
+
+  .user-name {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 .bg-dark {
@@ -68,6 +77,10 @@ body {
   a {
     font-weight: bold;
     color: #2c3e50;
+
+    .main-nav-icon {
+      margin-right: 0.3rem;
+    }
   }
 
   a.router-link-exact-active {
@@ -78,16 +91,12 @@ body {
 .main-nav-item {
   display: flex;
   text-decoration: none;
-  margin-right: 0.5rem;
+  margin: 0.2rem 0.5rem 0.2rem 0;
 
   .main-nav-text {
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  .main-nav-icon {
-    margin-right: 0.3rem;
   }
 }
 
@@ -286,12 +295,33 @@ body {
   flex: 1;
 }
 
-.edit-button {
+.edit-container {
+  display: flex;
+  flex-direction: column;
+
+  .edit-sub-container-top {
+    display: flex;
+    margin-top: 0.5rem;
+
+    .edit-firstname,
+    .edit-lastname {
+      width: 90%;
+      height: 1.5rem;
+      margin: 0 0.5rem 1rem 0.5rem;
+    }
+  }
+}
+
+.edit-button,
+.save-button,
+.cancel-button {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
   font-weight: bold;
-  padding: 10px;
+  padding: 5px;
+  margin: 0 0.5rem 1rem 0.5rem;
+  width: 5rem;
 }
 
 .header {

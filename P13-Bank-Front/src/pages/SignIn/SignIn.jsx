@@ -1,28 +1,47 @@
+import { useDispatch } from "react-redux";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { signIn } from "../../actions/userActions";
+import { login } from "../../services/auth.service";
+
 const SignIn = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const emailInput = useRef();
+  const emailError = useRef();
+  const passwordInput = useRef();
+  const passwordError = useRef();
+  const rememberMe = useRef();
+
+  const signInButton = (e) => {
+    e.preventDefault();
+    login(emailInput, passwordInput, rememberMe, navigate, emailError, passwordError, dispatch);
+    if (!emailInput.current.value === "" || !passwordInput.current.value === "") {
+      dispatch(signIn());
+    }
+  };
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
         <i className="fa fa-user-circle sign-in-icon"></i>
         <h1>Sign In</h1>
-        <form>
+        <form onSubmit={signInButton}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input ref={emailInput} type="text" className="username" />
+            <div ref={emailError} style={{ color: "red" }}></div>
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input ref={passwordInput} type="password" className="password" />
+            <div ref={passwordError} style={{ color: "red" }}></div>
           </div>
           <div className="input-remember">
-            <input type="checkbox" id="remember-me" />
+            <input ref={rememberMe} type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          {/* PLACEHOLDER DUE TO STATIC SITE */}
-          <a href="./user.html" className="sign-in-button">
-            Sign In
-          </a>
-          {/* SHOULD BE THE BUTTON BELOW */}
-          {/* <button className="sign-in-button">Sign In</button> */}
+          <button className="sign-in-button">Sign In</button>
         </form>
       </section>
     </main>

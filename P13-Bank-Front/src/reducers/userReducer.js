@@ -1,23 +1,61 @@
-import { getToken } from "../utils/getToken";
+import { resetStorage } from "../services/auth.service";
 
-const initialState = {
-  isUsernameValid: false,
-  isPasswordValid: false,
-  isRememberMeChecked: false,
+const userInitialState = {
+  login: false,
+  token: "",
   firstName: "",
   lastName: "",
-  token: getToken(),
+  editIdentityButton: false,
 };
 
-function userReducer(state = initialState, action) {
-  if (action.type === "GET_PROFILE_DATA") {
-    return {
-      ...state,
-      firstName: action.payload.firstName,
-      lastName: action.payload.lastName,
-    };
+const userReducer = (state = userInitialState, action) => {
+  switch (action.type) {
+    case "SIGN_IN":
+      return {
+        ...state,
+        login: true,
+      };
+    case "SIGN_OUT":
+      resetStorage();
+      return {
+        ...state,
+        login: false,
+        token: "",
+        firstName: "",
+        lastName: "",
+      };
+    case "TOKEN":
+      return {
+        ...state,
+        token: action.payload,
+        login: true,
+      };
+    case "SET_IDENTITY":
+      return {
+        ...state,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName,
+        editIdentityButton: false,
+      };
+    case "EDIT_IDENTITY_BUTTON":
+      return {
+        ...state,
+        editIdentityButton: true,
+      };
+    case "SAVE_IDENTITY_BUTTON":
+      return {
+        ...state,
+        editIdentityButton: false,
+      };
+    case "CANCEL_IDENTITY_BUTTON":
+      return {
+        ...state,
+        editIdentityButton: false,
+      };
+
+    default:
+      return state;
   }
-  return state;
-}
+};
 
 export default userReducer;
