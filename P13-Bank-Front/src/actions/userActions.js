@@ -10,7 +10,7 @@ export const SignOut = () => {
   };
 };
 
-export const tokenAction = (content) => {
+export const getToken = (content) => {
   return {
     type: "TOKEN",
     payload: content,

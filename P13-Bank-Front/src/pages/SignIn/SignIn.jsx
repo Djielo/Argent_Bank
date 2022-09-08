@@ -16,8 +16,10 @@ const SignIn = () => {
 
   const signInButton = (e) => {
     e.preventDefault();
-    dispatch(signIn());
     login(emailInput, passwordInput, rememberMe, navigate, emailError, passwordError, dispatch);
+    if (!emailInput.current.value === "" || !passwordInput.current.value === "") {
+      dispatch(signIn());
+    }
   };
   return (
     <main className="main bg-dark">

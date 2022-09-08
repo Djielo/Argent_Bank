@@ -1,11 +1,11 @@
-import { useRef } from "react";
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editIdentityButton, cancelIdentityButton } from "../../actions/userActions";
 import UserAccountItem from "../../components/UserAccountItem/UserAccountItem";
 import { UserAccountItemArray } from "../../datas/UserAccountItemArray";
 import { saveIdentity, getUserDatas } from "../../services/auth.service";
-import { getToken } from "../../utils/getToken";
+import { storageToken } from "../../utils/storageToken";
+import {useNavigate} from "react-router-dom";
 
 const Profil = () => {
   const firstName = useSelector((state) => state.firstName);
@@ -15,6 +15,7 @@ const Profil = () => {
   const inputEditLastName = useRef();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function updateNames(firstName, lastName) {
     if (firstName === "" || lastName === "") return;
@@ -22,8 +23,8 @@ const Profil = () => {
   }
 
   useEffect(() => {
-    const token = getToken();
-    getUserDatas( dispatch, token);
+    const token = storageToken();
+    getUserDatas(dispatch, token, navigate);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

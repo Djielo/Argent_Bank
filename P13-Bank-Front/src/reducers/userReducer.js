@@ -1,4 +1,4 @@
-import { resetStorageAndAuthorization } from "../services/auth.service";
+import { resetStorage } from "../services/auth.service";
 
 const userInitialState = {
   login: false,
@@ -16,15 +16,19 @@ const userReducer = (state = userInitialState, action) => {
         login: true,
       };
     case "SIGN_OUT":
-      resetStorageAndAuthorization();
+      resetStorage();
       return {
         ...state,
         login: false,
+        token: "",
+        firstName: "",
+        lastName: "",
       };
     case "TOKEN":
       return {
         ...state,
         token: action.payload,
+        login: true,
       };
     case "SET_IDENTITY":
       return {
