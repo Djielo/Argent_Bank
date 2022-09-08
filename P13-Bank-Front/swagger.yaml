@@ -211,7 +211,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Accounts Module
+        - Transactions Module
       produces:
         - application/json
       summary: Get a specific transaction
@@ -249,7 +249,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Accounts Module
+        - Transactions Module
       produces:
         - application/json
       summary: Update a specific transaction
@@ -288,7 +288,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Accounts Module
+        - Transactions Module
       produces:
         - application/json
       summary: Get transactions categories
