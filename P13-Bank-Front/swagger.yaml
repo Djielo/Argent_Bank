@@ -146,7 +146,7 @@ paths:
                   accounts:
                     type: array
                     items:
-                      $ref: "#/definitions/UserAccount"
+                      $ref: "#/definitions/UserAccounts"
 
         "400":
           description: Invalid Fields
@@ -172,7 +172,7 @@ paths:
           name: accountId
           type: integer
           required: true
-          description: Numeric ID of the account to get
+          description: Number ID of the account to get
         - in: query
           name: limit
           type: integer
@@ -224,7 +224,7 @@ paths:
           type: string
         - in: path
           name: transactionId
-          description: Numeric ID of the transaction to get
+          description: Number ID of the transaction to get
           type: integer
           required: true
       responses:
@@ -262,7 +262,7 @@ paths:
           type: string
         - in: path
           name: transactionId
-          description: Numeric ID of the transaction to get
+          description: Number ID of the transaction to get
           type: integer
           required: true
       responses:
@@ -301,7 +301,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Transactions categories retrieved successully
+          description: Transactions category retrieved successully
           schema:
             type: object
             properties:
