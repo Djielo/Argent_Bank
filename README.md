@@ -8,8 +8,6 @@ title: User can see the home page
 labels: ""
 assignees: ""
 
----
-
 A user should be able to:
 
 - [x] Navigate to the home page (`/`)
@@ -22,8 +20,6 @@ about: Issue for the login requirement
 title: User can login to the system
 labels: ''
 assignees: ''
-
----
 
 A user should be able to:
 
@@ -40,8 +36,6 @@ title: User can logout to the system
 labels: ''
 assignees: ''
 
----
-
 A user should be able to:
 
 - [x] See the logout button when logged in
@@ -55,8 +49,6 @@ about: Issue for the privacy requirement
 title: User can only see their own profile
 labels: ''
 assignees: ''
-
----
 
 After successfully logging in, a user should be able to:
 
@@ -72,8 +64,6 @@ title: User can update their profile
 labels: ''
 assignees: ''
 
----
-
 A user should be able to:
 
 - [x] Edit their profile (first name and last name).
@@ -86,8 +76,6 @@ about: Issue for the Redux requirement
 title: State management is done through Redux
 labels: ''
 assignees: ''
-
----
 
 The React app contains an implementation of Redux for state management that:
 
