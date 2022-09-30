@@ -4,6 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { signIn } from "../../actions/userActions";
 import { login } from "../../services/auth.service";
 
+/**
+ * [description] - This is the SignIn component. It is also used to handle the sign in process.
+ * It is a functional component.
+ * It uses the useDispatch hook to dispatch the signIn action.
+ * It uses the useNavigate hook to navigate to the profile page.
+ * It uses the useRef hook to create references to the email input, email error, password input, password error, and
+ * remember me checkbox. It uses the signInButton function to handle the sign in process.
+ * @return {JSX} - The SignIn component.
+ */
+
 const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

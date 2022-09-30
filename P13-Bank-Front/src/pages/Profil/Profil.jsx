@@ -5,7 +5,15 @@ import UserAccountItem from "../../components/UserAccountItem/UserAccountItem";
 import { UserAccountItemArray } from "../../datas/UserAccountItemArray";
 import { saveIdentity, getUserDatas } from "../../services/auth.service";
 import { storageToken } from "../../utils/storageToken";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+/**
+ * This function takes in a firstName and lastName, and then dispatches an action to update the state
+ * with the new firstName and lastName.
+ * @param {String} firstName
+ * @param {String} dispatch
+ * @returns {void}
+ */
 
 const Profil = () => {
   const firstName = useSelector((state) => state.firstName);
