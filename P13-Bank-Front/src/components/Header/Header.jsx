@@ -19,11 +19,11 @@ const Header = () => {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
 
-        <div>
+        <div className="main-nav-items">
           {storageState === null ? (
             <Link className="main-nav-item" to={{ pathname: "/user/login" }}>
               <i className="main-nav-icon fa fa-user-circle"></i>
-              <div className="main-nav-text">Sign In</div>
+              <div className="main-nav-text">SignIn</div>
             </Link>
           ) : (
             <>
@@ -39,7 +39,7 @@ const Header = () => {
                 }}
               >
                 <i className="main-nav-icon fa fa-sign-out"></i>
-                <div className="main-nav-text">Sign Out</div>
+                <div className="main-nav-text">SignOut</div>
               </Link>
             </>
           )}
